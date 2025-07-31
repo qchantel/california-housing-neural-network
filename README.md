@@ -11,7 +11,7 @@ baseline linear regression R²: 0.6488
 - [x] train the model
 - [x] split into modules
 - [x] run a linear regression to compare with NN
-- [ ] try multiple epochs to see differences in perf
+- [x] add a validation split for early stopping (with patience counter if avg loss increase on val)
 - [ ] track training process better (loss per each epoch)
 - [ ] feature tweaking
 - [ ] architecture tweaking (number of neurons and layers, activation functions)
@@ -20,7 +20,6 @@ baseline linear regression R²: 0.6488
 - [ ] understand how to check for overfitting? (beyond test set)
 - [ ] dropout technique
 - [ ] save the model to be able to run it without training
-- [ ] early stopping and validation splits?
 - [ ] perf: is it possible to use Mac GPU? is torch already using it?
 
 ## Notes

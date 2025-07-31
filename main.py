@@ -17,7 +17,7 @@ from model.housing_net import HousingNet
 from model.linear_reg import linear_reg_r2_score
 from training.trainer import create_model, train_model
 
-NUM_EPOCHS = 1000
+MAX_NUM_EPOCHS = 3000
 
 
 def set_random_seeds(seed=42):
@@ -35,7 +35,7 @@ def main():
     # Set random seeds for reproducibility
     set_random_seeds(42)
     
-    print(f"Training model for {NUM_EPOCHS} epochs")
+    print(f"Training model for a maximum of {MAX_NUM_EPOCHS} epochs")
     
     df = load_data()
     df_encoded = preprocess_data(df)
@@ -49,37 +49,64 @@ def main():
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
-
-    # We typically use 80% for training and 20% for testing.
-    X_train, X_test, y_train, y_test = train_test_split(
-        X_scaled, y, test_size=0.2, random_state=42
+    # Three-way split: Train (70%) / Validation (15%) / Test (15%)
+    # First split: separate test set (15%)
+    X_temp, X_test, y_temp, y_test = train_test_split(
+        X_scaled, y, test_size=0.15, random_state=42
     )
+    
+    # Second split: separate validation set from remaining data (15% of original = ~17.6% of remaining)
+    X_train, X_val, y_train, y_val = train_test_split(
+        X_temp, y_temp, test_size=0.176, random_state=42  # 0.15 / 0.85 ≈ 0.176
+    )
+
+    print(f"Data split sizes:")
+    print(f"  Training: {len(X_train)} samples ({len(X_train)/len(X_scaled)*100:.1f}%)")
+    print(f"  Validation: {len(X_val)} samples ({len(X_val)/len(X_scaled)*100:.1f}%)")
+    print(f"  Test: {len(X_test)} samples ({len(X_test)/len(X_scaled)*100:.1f}%)")
 
     # Convert to float32 tensors (required for neural networks)
     X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
     y_train_tensor = torch.tensor(y_train.values, dtype=torch.float32).unsqueeze(1)
 
+    X_val_tensor = torch.tensor(X_val, dtype=torch.float32)
+    y_val_tensor = torch.tensor(y_val.values, dtype=torch.float32).unsqueeze(1)
+
     X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
     y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32).unsqueeze(1)
 
-    # Linear Regression Baseline
-    lr_r2 = linear_reg_r2_score(X_train, y_train, X_test, y_test)
+    # Linear Regression Baseline (using train+validation for training, test for evaluation)
+    X_train_val = np.vstack([X_train, X_val])
+    y_train_val = pd.concat([y_train, y_val])
+    lr_r2 = linear_reg_r2_score(X_train_val, y_train_val, X_test, y_test)
     print(f"Linear Regression R²: {lr_r2:.4f}")
 
     train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
+    val_dataset = TensorDataset(X_val_tensor, y_val_tensor)
 
     train_loader = DataLoader(
         train_dataset,
         batch_size=64,    # Number of examples per batch
         shuffle=True      # Randomize the order each epoch
     )
+    
+    val_loader = DataLoader(
+        val_dataset,
+        batch_size=64,
+        shuffle=False     # No need to shuffle validation data
+    )
 
     model = create_model(input_dim=X_train.shape[1])
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     loss_fn = nn.MSELoss()
 
-    train_model(model, train_loader, optimizer, loss_fn, num_epochs=NUM_EPOCHS)
+    train_model(model, train_loader, val_loader, optimizer, loss_fn, num_epochs=MAX_NUM_EPOCHS)
 
+    # Final evaluation on test set (completely unseen data)
+    print("\n" + "="*50)
+    print("FINAL TEST SET EVALUATION")
+    print("="*50)
+    
     with torch.no_grad():  # Turn off gradients for evaluation
         test_predictions = model(X_test_tensor)
         test_loss = loss_fn(test_predictions, y_test_tensor)
