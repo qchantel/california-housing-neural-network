@@ -60,3 +60,13 @@ def preprocess_data(df, one_hot_encode=True):
 
     return df_encoded
 
+
+def print_data_stats(df):
+    print(f"Data shape: {df.shape}")
+    print(f"Data columns: {df.columns.tolist()}")
+    print(f"Data types: {df.dtypes.to_dict()}")
+    print(f"Data info: {df.info()}")
+    print(f"Data describe: {df.describe()}")
+    print(f"Data head: {df.head()}")
+    print(f"Data tail: {df.tail()}")
+    print(f"Data missing values: {df.isnull().sum()}")
