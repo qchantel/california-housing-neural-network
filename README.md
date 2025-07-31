@@ -9,7 +9,8 @@
 [dataset on Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
 
 ## Infos
-baseline linear regression R²: 0.6488
+- baseline linear regression R²: 0.6488
+- best result so far: R² 0.8017 (RMSE 52k$)
 
 ## TO DO 
 
