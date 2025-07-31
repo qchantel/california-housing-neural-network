@@ -26,11 +26,11 @@
 - [x] architecture tweaking (number of neurons and layers, activation functions)
 - [ ] histogram for visualisation
 - [ ] correlation heatmap
-- [ ] automated architecture tweaking?
+- [ ] some automated architecture tweaking?
 - [ ] lr tweaking & understanding
 - [ ] validation split 
-- [ ] understand how to check for overfitting? (beyond test set)
-- [ ] dropout technique
+- [ ] understand how to check for overfitting? (beyond test/val split sets)
+- [x] dropout technique
 - [ ] save the model to be able to run it without training
 - [ ] perf: is it possible to use Mac GPU? is torch already using it?
 - [ ] feature tweaking
