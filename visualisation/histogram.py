@@ -138,7 +138,7 @@ if __name__ == "__main__":
     
     # Create basic histogram
     print("Creating histogram of house values...")
-    # plot_house_values_histogram(df_encoded)
+    plot_house_values_histogram(df_encoded)
 
     print("Creating correlation matrix...")
     correlation_matrix(df_encoded)
