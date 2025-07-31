@@ -88,6 +88,12 @@ def main():
     print(f"Linear Regression R²: {lr_r2:.4f}")
     print(f"Linear Regression RMSE: {lr_rmse:.4f}")
 
+    # XGBoost Baseline (using train+validation for training, test for evaluation)
+    xgb_r2, xgb_rmse = xgboost_r2_score(X_train_val, y_train_val, X_test, y_test)
+    
+    print(f"XGBoost R²: {xgb_r2:.4f}")
+    print(f"XGBoost RMSE: {xgb_rmse:.4f}")
+
     train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
     val_dataset = TensorDataset(X_val_tensor, y_val_tensor)
 
@@ -130,10 +136,17 @@ def main():
     print(f"RMSE: {torch.sqrt(test_loss).item():.2f}")
     print(f"🎯 R² Score: {r2:.4f}")
     
-    # Compare with linear regression
-    improvement = r2 - lr_r2
+    # Compare with baseline models
+    print(f"\nModel Comparison:")
     print(f"Linear Regression R²: {lr_r2:.4f}")
-    print(f"Improvement over Linear Regression: {improvement:+.4f}")
+    print(f"XGBoost R²: {xgb_r2:.4f}")
+    print(f"Neural Network R²: {r2:.4f}")
+    
+    lr_improvement = r2 - lr_r2
+    xgb_improvement = r2 - xgb_r2
+    print(f"\nImprovements:")
+    print(f"Over Linear Regression: {lr_improvement:+.4f}")
+    print(f"Over XGBoost: {xgb_improvement:+.4f}")
 
 
 if __name__ == "__main__":
