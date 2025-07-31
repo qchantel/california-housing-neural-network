@@ -17,6 +17,7 @@ from data.data_loader import load_data, preprocess_data
 from model.housing_net import HousingNet, HousingNet2
 from model.linear_reg import linear_reg_r2_score
 from training.trainer import train_model
+from visualisation.histogram import plot_house_values_histogram
 
 
 
@@ -31,6 +32,7 @@ def set_random_seeds(seed=42):
     torch.backends.cudnn.benchmark = False
 
 
+
 def main():
     # Set random seeds for reproducibility
     set_random_seeds(42)
@@ -39,6 +41,7 @@ def main():
     
     df = load_data()
     df_encoded = preprocess_data(df)
+
 
     # 2D Array
     X = df_encoded.drop('median_house_value', axis=1)  # input features only
