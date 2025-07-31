@@ -17,7 +17,7 @@ from model.housing_net import HousingNet
 from model.linear_reg import linear_reg_r2_score
 from training.trainer import create_model, train_model
 
-NUM_EPOCHS = 10
+NUM_EPOCHS = 1000
 
 
 def set_random_seeds(seed=42):
