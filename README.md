@@ -47,7 +47,7 @@
 
 [More advanced approach to create features](https://www.kaggle.com/datasets/camnugent/california-housing-prices/discussion/506249) by using a reverse_geocoder lib to find city, but only shares MAE (26k$) in the thread.
 
-[https://www.kaggle.com/code/alisultanov/regression-xgboost-optuna] achieves 0.84 R2 but I did not have time to dive in. Seems to remove (again) the outliers from both train AND test dataset. Which make this wrong. Unsure though.
+[https://www.kaggle.com/code/alisultanov/regression-xgboost-optuna](Here they) achieve 0.84 R2 but I did not have time to dive in. Seems to remove (again) the outliers from both train AND test dataset. Which make this wrong. Unsure though.
 
 ## Histogram of median house values
 <img width="1488" height="898" alt="image" src="https://github.com/user-attachments/assets/8e62b475-b4ca-479f-8cf6-b48f80008308" />
