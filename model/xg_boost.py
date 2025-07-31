@@ -6,7 +6,7 @@ def create_xgboost_model():
     """Create an XGBoost regression model with default parameters."""
     model = xgb.XGBRegressor(
         random_state=42,
-        n_estimators=100,
+        n_estimators=200,
         learning_rate=0.1,
         max_depth=12,
         objective='reg:squarederror'
