@@ -1,7 +1,7 @@
 # Neural Network to predict house prices in California
 
 ## Sources
-- [dataset on Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
+[dataset on Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
 
 ## Infos
 baseline linear regression R²: 0.6488
