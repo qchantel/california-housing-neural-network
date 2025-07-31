@@ -1,0 +1,23 @@
+[project]
+name = "california-housing-neural-network"
+version = "0.1.0"
+description = "A neural network project for California housing data"
+authors = [
+    {name = "Quentin",email = "notpublic@email.com"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "pandas (>=2.3.1,<3.0.0)",
+    "numpy (>=2.3.2,<3.0.0)",
+    "scikit-learn (>=1.7.1,<2.0.0)",
+    "torch (>=2.7.1,<3.0.0)"
+]
+
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
