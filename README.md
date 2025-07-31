@@ -12,9 +12,9 @@
 
 | Metric | R² | RMSE (k$) |
 |--------|-------|------|
-| Baseline *Linear Regression* | 0.6488 | 69
-| Baseline **XGBoost**  | 0.8319 | 48
-| Best result so far `HousingNet2` |  0.8017 | 52
+| Baseline - **Linear Regression** | 0.6488 | 69
+| Baseline - **XGBoost**  | 0.8319 | 48
+| Target - **Neural Network** `HousingNet2` |  0.8017 | 52
 | ~~Comparable found on medium using XGBoost (ensemble method)~~ [See note](#notes) | ~~0.8338~~ | ~~38~~
 
 ## TO DO 
