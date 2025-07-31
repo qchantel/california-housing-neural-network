@@ -3,6 +3,9 @@
 ## Sources
 - [dataset on Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
 
+## Infos
+baseline linear regression R²: 0.6488
+
 ## TO DO 
 
 - [x] train the model
@@ -21,4 +24,4 @@
 - [ ] perf: is it possible to use Mac GPU? is torch already using it?
 
 ## Notes
-[Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE 
+[Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. Warning we don't have the same seed (see difference in linear reg R2)
