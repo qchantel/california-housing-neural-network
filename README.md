@@ -33,4 +33,4 @@ baseline linear regression R²: 0.6488
 
 
 ## Notes
-[Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. Warning we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
+[Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. **Warning**, we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
