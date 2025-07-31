@@ -13,7 +13,7 @@ import random
 
 # Local imports
 from config.config import MAX_NUM_EPOCHS
-from data.data_loader import load_data, preprocess_data
+from data.data_loader import drop_outliers, load_data, preprocess_data
 from model.housing_net import HousingNet, HousingNet2
 from model.linear_reg import linear_reg_r2_score, rmse_linear_reg_model
 from training.trainer import train_model
@@ -42,7 +42,6 @@ def main():
     df = load_data()
     df_encoded = preprocess_data(df)
 
-
     # 2D Array
     X = df_encoded.drop('median_house_value', axis=1)  # input features only
     # 1D Array
@@ -62,6 +61,7 @@ def main():
     X_train, X_val, y_train, y_val = train_test_split(
         X_temp, y_temp, test_size=0.176, random_state=42  # 0.15 / 0.85 ≈ 0.176
     )
+
 
     print(f"Data split sizes:")
     print(f"  Training: {len(X_train)} samples ({len(X_train)/len(X_scaled)*100:.1f}%)")

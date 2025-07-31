@@ -25,7 +25,7 @@
 - [x] add a validation split for early stopping (with patience counter if avg loss increase on val)
 - [x] architecture tweaking (number of neurons and layers, activation functions)
 - [x] histogram for visualisation
-- [ ] what if I remove outliers (see histogram)?
+- [x] what if I remove outliers (see histogram)? -> tried to remove median house outliers but it did not improve the model. Maybe there's something to do with features outliers.
 - [x] correlation heatmap
 - [ ] some automated architecture tweaking?
 - [ ] lr tweaking & understanding

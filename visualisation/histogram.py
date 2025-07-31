@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from data.data_loader import load_data, preprocess_data
+from data.data_loader import drop_outliers, load_data, preprocess_data
 
 def plot_house_values_histogram(df=None, bins=50, figsize=(12, 8), save_path=None):
     """
@@ -135,6 +135,7 @@ if __name__ == "__main__":
     # Load data
     df = load_data()
     df_encoded = preprocess_data(df, one_hot_encode=False)
+    # df_encoded = drop_outliers(df_encoded)
     
     # Create basic histogram
     print("Creating histogram of house values...")
