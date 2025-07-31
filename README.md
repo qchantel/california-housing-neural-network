@@ -10,10 +10,10 @@
 
 ## Infos
 
-| Metric | Value |
-|--------|-------|
-| Baseline linear regression R² | 0.6488 |
-| Best result so far | R² 0.8017 (RMSE 52k$) |
+| Metric | Value | RMSE (k$) |
+|--------|-------|------|
+| Baseline linear regression R² | 0.6488 | N\A
+| Best result so far R² |  0.8017 | 52
 
 ## TO DO 
 
