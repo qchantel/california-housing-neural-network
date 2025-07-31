@@ -11,8 +11,8 @@ baseline linear regression R²: 0.6488
 - [x] train the model
 - [x] split into modules
 - [x] run a linear regression to compare with NN
+- [x] track training process better (loss per 15 epochs)
 - [x] add a validation split for early stopping (with patience counter if avg loss increase on val)
-- [ ] track training process better (loss per each epoch)
 - [ ] feature tweaking
 - [ ] architecture tweaking (number of neurons and layers, activation functions)
 - [ ] lr tweaking & understanding
