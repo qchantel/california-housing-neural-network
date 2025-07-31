@@ -39,6 +39,12 @@
 ## Notes
 [Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. **Warning**, we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
 
+## Histogram of median house values
+<img width="1488" height="898" alt="image" src="https://github.com/user-attachments/assets/8e62b475-b4ca-479f-8cf6-b48f80008308" />
+
+## Correlation matrix
+<img width="1486" height="910" alt="image" src="https://github.com/user-attachments/assets/7f9acddd-9814-4329-82c9-d62f5f840b0b" />
+
 
 ## Going further
 - covariate shift and batch normalization (at each linear layer)
