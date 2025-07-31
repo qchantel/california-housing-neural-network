@@ -14,9 +14,9 @@ import random
 # Local imports
 from config.config import MAX_NUM_EPOCHS
 from data.data_loader import load_data, preprocess_data
-from model.housing_net import HousingNet
+from model.housing_net import HousingNet, HousingNet2
 from model.linear_reg import linear_reg_r2_score
-from training.trainer import create_model, train_model
+from training.trainer import train_model
 
 
 
@@ -96,7 +96,11 @@ def main():
         shuffle=False     # No need to shuffle validation data
     )
 
-    model = create_model(input_dim=X_train.shape[1])
+    # X_train.shape[1] access the second element of the tuple
+    # it's 13 because we have 13 features (aka columns <> 14-1=13, minus the one we predict)
+    # setting it this way avoid hardcoding the number of features (we can change the data)
+    model = HousingNet2(input_dim=X_train.shape[1])
+
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     loss_fn = nn.MSELoss()
 
@@ -117,7 +121,7 @@ def main():
 
     print(f"Test MSE: {test_loss.item():.2f}")
     print(f"RMSE: {torch.sqrt(test_loss).item():.2f}")
-    print(f"R² Score: {r2:.4f}")
+    print(f"🎯 R² Score: {r2:.4f}")
     
     # Compare with linear regression
     improvement = r2 - lr_r2

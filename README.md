@@ -19,6 +19,7 @@ baseline linear regression R²: 0.6488
 - [x] track training process better (loss per 15 epochs)
 - [x] add a validation split for early stopping (with patience counter if avg loss increase on val)
 - [ ] architecture tweaking (number of neurons and layers, activation functions)
+- [ ] automated architecture tweaking?
 - [ ] lr tweaking & understanding
 - [ ] validation split 
 - [ ] understand how to check for overfitting? (beyond test set)
@@ -34,3 +35,11 @@ baseline linear regression R²: 0.6488
 
 ## Notes
 [Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. **Warning**, we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
+
+
+## Going further
+- covariate shift and batch normalization (at each linear layer)
+- layer sizing
+- weight initialization
+- residual path
+- activation functions: how to pick

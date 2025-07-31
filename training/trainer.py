@@ -3,12 +3,6 @@ import torch
 from model.housing_net import HousingNet
 
 
-def create_model(input_dim):
-    # X_train.shape[1] access the second element of the tuple
-    # it's 13 because we have 13 features (aka columns <> 14-1=13, minus the one we predict)
-    # setting it this way avoid hardcoding the number of features (we can change the data)
-    return HousingNet(input_dim=input_dim)
-
 def train_model(model, train_loader, val_loader, optimizer, loss_fn, num_epochs, patience=50):
     """
     Train the model with validation monitoring and early stopping.
