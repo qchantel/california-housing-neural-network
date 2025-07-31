@@ -14,7 +14,7 @@
 |--------|-------|------|
 | Baseline linear regression | 0.6488 | 69
 | Best result so far `HousingNet2` |  0.8017 | 52
-| ~~Comparable found on medium using XGBoost~~ [See note](#notes) | 0.8338 | 38
+| ~~Comparable found on medium using XGBoost (ensemble method)~~ [See note](#notes) | 0.8338 | 38
 
 ## TO DO 
 
@@ -40,7 +40,7 @@
 ## Notes
 [Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. **Warning**, we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
 
-> **After thoughts**:
+> ⚠️⚠️⚠️ **After thoughts**:
 > Actually, the author here suggests that he removed the outliers from the entire data set, making the results irrelevant. Outliers shall not be removed from test data.
 
 ## Histogram of median house values

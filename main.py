@@ -16,6 +16,7 @@ from config.config import MAX_NUM_EPOCHS
 from data.data_loader import drop_outliers, load_data, preprocess_data, print_data_stats
 from model.housing_net import HousingNet, HousingNet2
 from model.linear_reg import linear_reg_r2_score, rmse_linear_reg_model
+from model.xg_boost import xgboost_r2_score
 from training.trainer import train_model
 from visualisation.histogram import plot_house_values_histogram
 
