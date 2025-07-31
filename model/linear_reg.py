@@ -1,5 +1,6 @@
+import numpy as np
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error, r2_score
 
 def create_linear_reg_model():
     model = LinearRegression()
@@ -8,6 +9,11 @@ def create_linear_reg_model():
 def train_linear_reg_model(model, X_train, y_train):
     model.fit(X_train, y_train)
     return model
+
+def rmse_linear_reg_model(model, X_test, y_test):
+    lr_predictions = model.predict(X_test)
+    lr_rmse = np.sqrt(mean_squared_error(y_test, lr_predictions))
+    return lr_rmse
 
 def evaluate_linear_reg_model(model, X_test, y_test):
     lr_predictions = model.predict(X_test)
@@ -18,4 +24,5 @@ def linear_reg_r2_score(X_train, y_train, X_test, y_test):
     model = create_linear_reg_model()
     model = train_linear_reg_model(model, X_train, y_train)
     lr_r2 = evaluate_linear_reg_model(model, X_test, y_test)
-    return lr_r2
+    lr_rmse = rmse_linear_reg_model(model, X_test, y_test)
+    return lr_r2, lr_rmse

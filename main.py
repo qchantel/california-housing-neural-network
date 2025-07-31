@@ -15,7 +15,7 @@ import random
 from config.config import MAX_NUM_EPOCHS
 from data.data_loader import load_data, preprocess_data
 from model.housing_net import HousingNet, HousingNet2
-from model.linear_reg import linear_reg_r2_score
+from model.linear_reg import linear_reg_r2_score, rmse_linear_reg_model
 from training.trainer import train_model
 from visualisation.histogram import plot_house_values_histogram
 
@@ -81,8 +81,10 @@ def main():
     # Linear Regression Baseline (using train+validation for training, test for evaluation)
     X_train_val = np.vstack([X_train, X_val])
     y_train_val = pd.concat([y_train, y_val])
-    lr_r2 = linear_reg_r2_score(X_train_val, y_train_val, X_test, y_test)
+    lr_r2, lr_rmse = linear_reg_r2_score(X_train_val, y_train_val, X_test, y_test)
+    
     print(f"Linear Regression R²: {lr_r2:.4f}")
+    print(f"Linear Regression RMSE: {lr_rmse:.4f}")
 
     train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
     val_dataset = TensorDataset(X_val_tensor, y_val_tensor)
