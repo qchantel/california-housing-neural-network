@@ -29,13 +29,13 @@
 - [x] correlation heatmap
 - [ ] some automated architecture tweaking?
 - [ ] lr tweaking & understanding
-- [ ] validation split 
+- [x] validation split 
 - [ ] understand how to check for overfitting? (beyond test/val split sets)
 - [x] dropout technique
 - [ ] save the model to be able to run it without training
 - [ ] perf: is it possible to use Mac GPU? is torch already using it?
 - [ ] feature tweaking
-- [ ] XGBoost?
+- [ ] ~~XGBoost?~~
 
 ## Notes
 [Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. **Warning**, we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
