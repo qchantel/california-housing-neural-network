@@ -1,5 +1,10 @@
 # Neural Network to predict house prices in California
 
+## Instructions
+```bash
+./run.sh
+```
+
 ## Sources
 [dataset on Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
 
@@ -13,7 +18,6 @@ baseline linear regression R²: 0.6488
 - [x] run a linear regression to compare with NN
 - [x] track training process better (loss per 15 epochs)
 - [x] add a validation split for early stopping (with patience counter if avg loss increase on val)
-- [ ] feature tweaking
 - [ ] architecture tweaking (number of neurons and layers, activation functions)
 - [ ] lr tweaking & understanding
 - [ ] validation split 
@@ -21,6 +25,12 @@ baseline linear regression R²: 0.6488
 - [ ] dropout technique
 - [ ] save the model to be able to run it without training
 - [ ] perf: is it possible to use Mac GPU? is torch already using it?
+- [ ] feature tweaking
+- [ ] XGBoost?
+
+## Remaining questions
+- Some reading tells me that for such a model (regression type, not classification) between 300-800 epochs shall be fine. But 3,000 epochs and I still did not reach my early stopping (model keeps improving). Don't know why.
+
 
 ## Notes
 [Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. Warning we don't have the same seed (see difference in linear reg R2)

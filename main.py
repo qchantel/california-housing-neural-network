@@ -12,12 +12,12 @@ import numpy as np
 import random
 
 # Local imports
+from config.config import MAX_NUM_EPOCHS
 from data.data_loader import load_data, preprocess_data
 from model.housing_net import HousingNet
 from model.linear_reg import linear_reg_r2_score
 from training.trainer import create_model, train_model
 
-MAX_NUM_EPOCHS = 3000
 
 
 def set_random_seeds(seed=42):
@@ -114,12 +114,14 @@ def main():
         # Calculate R² score
         r2 = r2_score(y_test_tensor.numpy(), test_predictions.numpy())
 
+
     print(f"Test MSE: {test_loss.item():.2f}")
     print(f"RMSE: {torch.sqrt(test_loss).item():.2f}")
     print(f"R² Score: {r2:.4f}")
     
     # Compare with linear regression
     improvement = r2 - lr_r2
+    print(f"Linear Regression R²: {lr_r2:.4f}")
     print(f"Improvement over Linear Regression: {improvement:+.4f}")
 
 
