@@ -30,8 +30,7 @@ baseline linear regression R²: 0.6488
 
 ## Remaining questions
 - Some reading tells me that for such a model (regression type, not classification) between 300-800 epochs shall be fine. But 3,000 epochs and I still did not reach my early stopping (model keeps improving). Don't know why.
-- why different linear regression results vs the listed article in **Notes**? shall not be impacted by seed.
 
 
 ## Notes
-[Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. Warning we don't have the same seed (see difference in linear reg R2)
+[Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. Warning we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
