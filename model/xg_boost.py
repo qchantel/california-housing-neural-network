@@ -8,7 +8,7 @@ def create_xgboost_model():
         random_state=42,
         n_estimators=100,
         learning_rate=0.1,
-        max_depth=6,
+        max_depth=12,
         objective='reg:squarederror'
     )
     return model
