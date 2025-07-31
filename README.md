@@ -14,7 +14,7 @@
 |--------|-------|------|
 | Baseline linear regression | 0.6488 | N\A
 | Best result so far |  0.8017 | 52
-| Comparable found on medium using XGBoost | 0.8338 | 38k$
+| Comparable found on medium using XGBoost | 0.8338 | 38
 
 ## TO DO 
 
