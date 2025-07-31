@@ -8,16 +8,16 @@
 
 ## TO DO 
 
-[x] train the model
-[x] split into modules
-[x] run a linear regression to compare with NN
-[] try multiple epochs to see differences in perf
-[] track training process better (loss per each epoch)
-[] feature tweaking
-[] architecture tweaking (number of neurons and layers, activation functions)
-[] lr tweaking & understanding
-[] validation split 
-[] understand how to check for overfitting? (beyond test set)
-[] dropout technique
-[] save the model to be able to run it without training
-[] early stopping and validation splits?
+- [x] train the model
+- [x] split into modules
+- [x] run a linear regression to compare with NN
+- [ ] try multiple epochs to see differences in perf
+- [ ] track training process better (loss per each epoch)
+- [ ] feature tweaking
+- [ ] architecture tweaking (number of neurons and layers, activation functions)
+- [ ] lr tweaking & understanding
+- [ ] validation split 
+- [ ] understand how to check for overfitting? (beyond test set)
+- [ ] dropout technique
+- [ ] save the model to be able to run it without training
+- [ ] early stopping and validation splits?
