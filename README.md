@@ -8,12 +8,12 @@
 ## Sources
 [dataset on Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices/data)
 
-## Infos
+## Performance
 
 | Metric | R² | RMSE (k$) |
 |--------|-------|------|
 | Baseline linear regression | 0.6488 | N\A
-| Best result so far |  0.8017 | 52
+| Best result so far (HousingNet2) |  0.8017 | 52
 | Comparable found on medium using XGBoost | 0.8338 | 38
 
 ## TO DO 
