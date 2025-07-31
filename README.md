@@ -12,8 +12,8 @@
 
 | Metric | R² | RMSE (k$) |
 |--------|-------|------|
-| Baseline linear regression | 0.6488 | 69
-| XGBoost baseline | 0.8319 | 48
+| Baseline **Linear Regression** | 0.6488 | 69
+| Baseline **XGBoost**  | 0.8319 | 48
 | Best result so far `HousingNet2` |  0.8017 | 52
 | ~~Comparable found on medium using XGBoost (ensemble method)~~ [See note](#notes) | ~~0.8338~~ | ~~38~~
 
@@ -36,7 +36,8 @@
 - [ ] save the model to be able to run it without training
 - [ ] perf: is it possible to use Mac GPU? is torch already using it?
 - [ ] feature tweaking
-- [ ] XGBoost comparison
+- [x] XGBoost comparison
+- [x] XGBoost grid search
 
 ## Notes
 [Some inspiring article](https://medium.com/@tejus05/california-housing-price-prediction-an-end-to-end-machine-learning-project-example-6d1a56c6c248) that achieves a 0.8338 R2 and 38,220$ RMSE. **Warning**, we don't have the same seed and split so it's not directly comparable (see difference in linear reg R2). But it's a good approx.
