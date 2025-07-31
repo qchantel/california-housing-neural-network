@@ -23,9 +23,9 @@
 - [x] run a linear regression to compare with NN
 - [x] track training process better (loss per 15 epochs)
 - [x] add a validation split for early stopping (with patience counter if avg loss increase on val)
+- [x] architecture tweaking (number of neurons and layers, activation functions)
 - [ ] histogram for visualisation
 - [ ] correlation heatmap
-- [ ] architecture tweaking (number of neurons and layers, activation functions)
 - [ ] automated architecture tweaking?
 - [ ] lr tweaking & understanding
 - [ ] validation split 
