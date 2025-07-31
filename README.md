@@ -24,8 +24,9 @@
 - [x] track training process better (loss per 15 epochs)
 - [x] add a validation split for early stopping (with patience counter if avg loss increase on val)
 - [x] architecture tweaking (number of neurons and layers, activation functions)
-- [ ] histogram for visualisation
-- [ ] correlation heatmap
+- [x] histogram for visualisation
+- [ ] what if I remove outliers (see histogram)?
+- [x] correlation heatmap
 - [ ] some automated architecture tweaking?
 - [ ] lr tweaking & understanding
 - [ ] validation split 
