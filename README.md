@@ -2,6 +2,7 @@
 
 ## Instructions
 ```bash
+poetry install
 ./run.sh
 ```
 
